@@ -64,6 +64,7 @@ contract SimpleBank {
     function enroll() public returns (bool) {
         enrolled[msg.sender] = true;
         emit LogEnrolled(msg.sender);
+        return enrolled[msg.sender];
     }
 
     /// @notice Deposit ether into bank
@@ -87,5 +88,6 @@ contract SimpleBank {
         (bool sent, ) = msg.sender.call{value: withdrawAmount}("");
         require(sent, "Failed to send Ether");
         emit LogWithdrawal(msg.sender, withdrawAmount, balance);
+        return balance;
     }
 }
