@@ -9,9 +9,8 @@ pragma solidity >=0.5.16 <0.9.0;
 contract SimpleBank {
 
     /* State variables
-     */
     
-    
+     
     // Fill in the visibility keyword. 
     // Hint: We want to protect our users balance from other contracts
     mapping (address => uint) balances ;
